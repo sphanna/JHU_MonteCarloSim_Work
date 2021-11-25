@@ -53,7 +53,7 @@ begin #Exercise 15.6 setup
     Y_ = (θ,V) -> Yk(θ,V,Q,dQ)
 end
 
-θ = [SGalgorithm(Y_,θ₀,ak,1000) for i in 1:5]
+θ = [SGalgorithm(Y_,θ₀,ak,N) for i in 1:5]
 θterms = last.(θ)
 dists = [norm(θterms[i] - θstar) for i in 1:5]
 var(dists)
