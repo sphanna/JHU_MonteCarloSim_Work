@@ -25,8 +25,9 @@ end
 Yk(θk,Vk,Q,dQ) = Q(θk,Vk) * dlogpv(Vk,θk) + dQ(θk,Vk);
 
 #algorithm setup
+N = 1000
 a(k) = 0.1/((50 + k)^0.501)
-ak = a.(1:N)
+ak = a.(0:N-1)
 
 begin #shared setup#
     dlogpv(V,θ) = [(θ[1] - V)/((θ[1]-1)*θ[1]),0]
